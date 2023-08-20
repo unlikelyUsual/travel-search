@@ -1,7 +1,13 @@
 import { configureStore } from "@reduxjs/toolkit";
+import tripReduce from "./reducers/tripReducer";
+
+const reducers = {
+  trips: tripReduce,
+};
 
 export const store = configureStore({
-  reducer: {},
+  reducer: reducers,
+  devTools: true,
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

@@ -1,7 +1,11 @@
-import React from "react";
+import React, { ChangeEvent } from "react";
 import cities from "../helper/indian_cities.json";
 import no_of_travelers from "../helper/travelers.json";
 import budget from "../helper/budget.json";
+import interests from "../helper/interest.json";
+import axios from "../util/axios";
+import HTTP_STATUS from "../constants/http";
+import Alert from "../util/alerts";
 
 const TripForm = () => {
   const [formField, setFormField] = React.useState({
@@ -17,21 +21,35 @@ const TripForm = () => {
     budgetPerPerson: "",
   });
 
-  const formFieldHandler = (e: { target: { name: any; value: any } }) => {
+  const formFieldHandler = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     let name = e.target.name;
     let value = e.target.value;
     setFormField({ ...formField, [name]: value });
   };
 
-  const onSubmitHandler = (e: { preventDefault: () => void }) => {
+  const onSubmitHandler = async (e: any) => {
     e.preventDefault();
     console.log(formField);
+    // try {
+    //   //TODO  :endpoint here
+    //   const res = await axios.post(``, formField);
+    //   if (res.status === HTTP_STATUS.OK) Alert.success(`Save`);
+    //   else Alert.fail(`Something went wrong`);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   return (
     <>
       <div className='d-flex travel-form-sm'>
-        <select className='form-select mr-2' aria-label='Default select example' defaultValue=''>
+        <select
+          className='form-select mr-2'
+          aria-label='Default select example'
+          defaultValue=''
+          name='destination'
+          onChange={formFieldHandler}
+        >
           <option value=''>Where do you want to go?</option>
           {cities.map((item) => (
             <option key={item.id} value={item.name} selected={item.name === formField.destination}>
@@ -39,24 +57,42 @@ const TripForm = () => {
             </option>
           ))}
         </select>
-        <select className='form-select mr-2' aria-label='Default select example'>
-          <option selected>Your interest?</option>
-          <option value='1'>Adventure</option>
-          <option value='2'>Heritage</option>
-          <option value='3'>Safari</option>
-          <option value='3'>Wine & Food</option>
-          <option value='3'>Beaches</option>
+        <select
+          className='form-select mr-2'
+          aria-label='Default select example'
+          defaultValue=''
+          name='interest'
+          onChange={formFieldHandler}
+        >
+          <option value=''>Your interest?</option>
+          {interests.map((item) => (
+            <option key={item.id} value={item.value} selected={item.value === formField.interest}>
+              {item.value}
+            </option>
+          ))}
         </select>
-        <select className='form-select mr-2' aria-label='Default select example'>
-          <option selected>No. Of Traveler</option>
+        <select
+          className='form-select mr-2'
+          aria-label='Default select example'
+          defaultValue=''
+          name='travelers'
+          onChange={formFieldHandler}
+        >
+          <option value=''>No. Of Traveler</option>
           {no_of_travelers.map((item) => (
             <option key={item.id} value={item.value} selected={item.value === formField.travelers}>
               {item.value}
             </option>
           ))}
         </select>
-        <select className='form-select mr-2' aria-label='Default select example'>
-          <option selected>Budget Per Person</option>
+        <select
+          className='form-select mr-2'
+          aria-label='Default select example'
+          defaultValue=''
+          name='budgetPerPerson'
+          onChange={formFieldHandler}
+        >
+          <option value=''>Budget Per Person</option>
           {budget.map((item) => (
             <option key={item.id} value={item.value} selected={item.value === formField.budgetPerPerson}>
               {item.value}
@@ -123,14 +159,26 @@ const TripForm = () => {
                     />
                   </div>
                   <div className='col-md-6'>
-                    <select id='when' className='form-select w-100 p-1' defaultValue=''>
+                    <select
+                      id='when'
+                      className='form-select w-100 p-1'
+                      defaultValue=''
+                      name='when'
+                      onChange={formFieldHandler}
+                    >
                       <option value=''>When</option>
                       <option>...</option>
                     </select>
                   </div>
 
                   <div className='col-12'>
-                    <select id='stage' className='form-select w-100 p-1' defaultValue=''>
+                    <select
+                      id='stage'
+                      className='form-select w-100 p-1'
+                      defaultValue=''
+                      name='stage'
+                      onChange={formFieldHandler}
+                    >
                       <option value=''>What stage of planning are you in?</option>
                       <option>...</option>
                     </select>
