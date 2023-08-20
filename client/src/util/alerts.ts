@@ -6,7 +6,7 @@ class Alert {
   }
 
   static fail(message: string, error?: any) {
-    console.log(`Error => `, error);
+    error && console.log(`Error => `, error);
     toast.error(message);
   }
 }

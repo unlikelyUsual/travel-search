@@ -1,4 +1,4 @@
-import React from "react";
+import React, { ChangeEvent, FormEventHandler } from "react";
 import cities from "../helper/indian_cities.json";
 import no_of_travelers from "../helper/travelers.json";
 import budget from "../helper/budget.json";
@@ -21,23 +21,23 @@ const TripForm = () => {
     budgetPerPerson: "",
   });
 
-  const formFieldHandler = (e: { target: { name: any; value: any } }) => {
+  const formFieldHandler = (e: ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     let name = e.target.name;
     let value = e.target.value;
     setFormField({ ...formField, [name]: value });
   };
 
-  const onSubmitHandler = async (e: { preventDefault: () => void }) => {
+  const onSubmitHandler = async (e: any) => {
     e.preventDefault();
     console.log(formField);
-    try {
-      //TODO  :endpoint here
-      const res = await axios.post(``, formField);
-      if (res.status === HTTP_STATUS.OK) Alert.success(`Save`);
-      else Alert.fail(`Something went wrong`);
-    } catch (err) {
-      console.log(err);
-    }
+    // try {
+    //   //TODO  :endpoint here
+    //   const res = await axios.post(``, formField);
+    //   if (res.status === HTTP_STATUS.OK) Alert.success(`Save`);
+    //   else Alert.fail(`Something went wrong`);
+    // } catch (err) {
+    //   console.log(err);
+    // }
   };
 
   return (
