@@ -1,9 +1,9 @@
 import "./App.css";
 import Dashboard from "./components/dashboard";
-import Header from "./components/header";
 import Navbar from "./components/navbar";
 import { Toaster } from "react-hot-toast";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Landing from "./components/landing";
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
         <Toaster />
         <Navbar />
         <Routes>
-          <Route path='/' element={<Header />} />
+          <Route path='/' element={<Landing />} />
           <Route path='/dashboard' element={<Dashboard />} />
         </Routes>
       </div>

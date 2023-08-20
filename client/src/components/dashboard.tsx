@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { ITripState, getTrips } from "../reducers/tripReducer";
+import { getTrips } from "../reducers/tripReducer";
 import { useEffect } from "react";
 import { AppDispatch } from "../store";
 
@@ -11,8 +11,6 @@ const Dashboard = () => {
   }, []);
 
   const selected = useSelector((state: any) => state.trips.trips);
-
-  console.log("Trip", selected);
 
   const tableHead = {
     name: "Full Name",
@@ -37,7 +35,7 @@ const Dashboard = () => {
       return <td key={i}>{result[key]}</td>;
     });
 
-    return <tr key={result.id}>{columnData}</tr>;
+    return <tr key={result._id}>{columnData}</tr>;
   };
 
   const refetch = (): void => {
@@ -63,9 +61,7 @@ const Dashboard = () => {
               ))}
             </tr>
           </thead>
-          <tbody>
-            <tr>{selected.map((item: any) => getTableRows(item))}</tr>
-          </tbody>
+          <tbody>{selected.map((item: any) => getTableRows(item))}</tbody>
         </table>
       </div>
     </>

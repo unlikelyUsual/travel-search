@@ -1,22 +1,23 @@
 import mongoose from "mongoose";
+import Logger from "./logger";
 
-const server = process.env.DB_URL;
-const database = process.env.DB_NAME;
 class Database {
+  private readonly logger = new Logger(`Database`);
   constructor() {
     this._connect();
   }
 
   _connect() {
     mongoose
-      .connect(`mongodb://${server}/${database}`)
+      .connect(process.env.DB_URL ?? "")
       .then(() => {
         console.log("Database connection successful");
       })
       .catch((err) => {
+        this.logger.error(err.message, err);
         console.error("Database connection failed");
       });
   }
 }
 
-module.exports = new Database();
+export default Database;

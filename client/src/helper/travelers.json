@@ -1,18 +1,23 @@
 [
     {
         "id": "1",
-        "value": "1 Traveler"
+        "value": "1",
+        "text": "1 Traveler"
     },
     {
         "id": "2",
-        "value": "2 Traveler"
+        "value": "2",
+        "text": "2 Traveler"
+        
     },
     {
         "id": "3",
-        "value": "3 Traveler"
+        "value": "3",
+        "text": "3 Traveler"
     },
     {
         "id": "4",
-        "value": "4 Traveler"
+        "value": "3",
+        "text": "4 Traveler"
     }
 ]

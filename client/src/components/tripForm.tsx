@@ -29,15 +29,29 @@ const TripForm = () => {
 
   const onSubmitHandler = async (e: any) => {
     e.preventDefault();
-    console.log(formField);
-    // try {
-    //   //TODO  :endpoint here
-    //   const res = await axios.post(``, formField);
-    //   if (res.status === HTTP_STATUS.OK) Alert.success(`Save`);
-    //   else Alert.fail(`Something went wrong`);
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    document.getElementById("close-modal")?.click();
+    try {
+      const res = await axios.post(`/trip`, formField);
+      if (res.status === HTTP_STATUS.OK) {
+        setFormField({
+          name: "",
+          email: "",
+          phone: "",
+          duration: "",
+          when: "",
+          stage: "",
+          destination: "",
+          interest: "",
+          travelers: "",
+          budgetPerPerson: "",
+        });
+        Alert.success(`Save`);
+      } else {
+        Alert.fail(`Something went wrong`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -81,7 +95,7 @@ const TripForm = () => {
           <option value=''>No. Of Traveler</option>
           {no_of_travelers.map((item) => (
             <option key={item.id} value={item.value} selected={item.value === formField.travelers}>
-              {item.value}
+              {item.text}
             </option>
           ))}
         </select>
@@ -109,7 +123,13 @@ const TripForm = () => {
               <div className='modal-body trip-form-body'>
                 <h4>Almost There!</h4>
                 <p>We need a bit more info to create your itinerary:</p>
-                <button type='button' className='btn-close' data-bs-dismiss='modal' aria-label='Close'></button>
+                <button
+                  type='button'
+                  className='btn-close'
+                  id='close-modal'
+                  data-bs-dismiss='modal'
+                  aria-label='Close'
+                ></button>
                 <form className='row g-3 p-2' onSubmit={onSubmitHandler}>
                   <div className='col-12'>
                     <input
