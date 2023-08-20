@@ -8,7 +8,7 @@ const Dashboard = () => {
 
   useEffect(() => {
     dispatch(getTrips());
-  }, []);
+  }, [dispatch]);
 
   const selected = useSelector((state: any) => state.trips.trips);
 
