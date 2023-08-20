@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getTrips } from "../reducers/tripReducer";
+import { ITripState, getTrips } from "../reducers/tripReducer";
 import { useEffect } from "react";
 import { AppDispatch } from "../store";
 
@@ -10,9 +10,9 @@ const Dashboard = () => {
     dispatch(getTrips());
   }, []);
 
-  const selected = useSelector((state) => state);
+  const selected = useSelector((state: any) => state.trips.trips);
 
-  console.log(selected);
+  console.log("Trip", selected);
 
   const tableHead = {
     name: "Full Name",
@@ -40,10 +40,19 @@ const Dashboard = () => {
     return <tr key={result.id}>{columnData}</tr>;
   };
 
+  const refetch = (): void => {
+    dispatch(getTrips());
+  };
+
   return (
     <>
       <div className='container container-fluid'>
         <div className='display-4 my-3'>Travelers</div>
+        <div className='d-flex justify-content-end mb-3'>
+          <button className='btn btn-primary' onClick={refetch}>
+            Refetch
+          </button>
+        </div>
         <table className='table'>
           <thead>
             <tr>
@@ -55,12 +64,7 @@ const Dashboard = () => {
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <th scope='row'>1</th>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
+            <tr>{selected.map((item: any) => getTableRows(item))}</tr>
           </tbody>
         </table>
       </div>

@@ -1,13 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "../util/axios";
 
-const state = {
+export interface ITripState {
+  isLoading: boolean;
+  trips: [];
+}
+
+const state: ITripState = {
   isLoading: false,
   trips: [],
 };
 
 export const getTrips = createAsyncThunk("getAllTrips", async () => {
-  const res = await axios.get(`https://jsonplaceholder.typicode.com/todos`);
+  const res = await axios.get(``);
   return res.data;
 });
 
