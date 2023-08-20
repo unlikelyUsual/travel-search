@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  background-color: #FFF;
+  font-family: soin_sans_pro,Arial,Helvetica,sans-serif;
+  font-size: 13px;
+  line-height: 1;
+  color: #595754;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+ .btn-primary {
+  border-bottom-right-radius: 2px;
+    background-color: #f47d5f;
+    color: white;
+    transition: background-color .15s ease-in;
+    border-color:  #f47d5f;
+    border-radius: 2px;
+ }
+
+ .btn-primary:hover {
+  color: white;
+  background-color: #f26a47;
+  border-color:  #f47d5f;
+ }
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.navbar {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.collapse.navbar-collapse{
+  border-top: 2px solid #ededed;
+  border-bottom: 2px solid #ededed;
+
+}
+
+li.dropdown {
+  padding: 0.3rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #36312a;
+}
+
+.header-container {
+  height:  450px;
+  overflow: hidden;
+  background : url("/public/header_image.webp") no-repeat;
+  background-size: cover;
+  color: #fff;
+  text-align: center;
+  display: flex!important;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.header-container h4 {
+  font-size: 46px;
+}
+
+.header-container .travel-form-sm select {
+  border-radius: 0;
+  font-size: 17px;
+  padding: 10px 8px;
+  background-color: #fff;
+  color: #36312a;
+  width: 15rem;
+}
+
+.trip-form-body  {
+  color : #36312a ;
+}
+
+.trip-form-body .btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem
+}
