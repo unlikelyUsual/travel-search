@@ -34,7 +34,7 @@ const Navbar = () => {
                 </a>
                 <ul className='dropdown-menu'>
                   <li>
-                    <a className='dropdown-item' href='#'>
+                    <a className='dropdown-item' href='/'>
                       Action
                     </a>
                   </li>

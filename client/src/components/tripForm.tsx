@@ -1,4 +1,4 @@
-import React, { ChangeEvent, FormEventHandler } from "react";
+import React, { ChangeEvent } from "react";
 import cities from "../helper/indian_cities.json";
 import no_of_travelers from "../helper/travelers.json";
 import budget from "../helper/budget.json";
