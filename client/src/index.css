@@ -47,7 +47,7 @@ li.dropdown {
   color: #36312a;
 }
 
-.header-container {
+.landing-container {
   height:  450px;
   overflow: hidden;
   background : url("/public/header_image.webp") no-repeat;
@@ -60,11 +60,11 @@ li.dropdown {
   flex-direction: column;
 }
 
-.header-container h4 {
+.landing-container h4 {
   font-size: 46px;
 }
 
-.header-container .travel-form-sm select {
+.landing-container .travel-form-sm select {
   border-radius: 0;
   font-size: 17px;
   padding: 10px 8px;
@@ -81,4 +81,17 @@ li.dropdown {
   position: absolute;
   top: 1rem;
   right: 1rem
+}
+
+.landing-exp {
+  background-color: #f2f2f2;
+    text-align: center;
+}
+
+.landing-exp p {
+  width: 1240px;
+  margin: 0 auto;
+  line-height: 1;
+    color: #595754;
+    font-size: 19px;
 }

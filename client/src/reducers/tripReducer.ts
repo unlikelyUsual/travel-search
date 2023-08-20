@@ -12,8 +12,8 @@ const state: ITripState = {
 };
 
 export const getTrips = createAsyncThunk("getAllTrips", async () => {
-  const res = await axios.get(``);
-  return res.data;
+  const res = await axios.get(`trips`);
+  return res?.data?.data?.trips ?? [];
 });
 
 const tripSlice = createSlice({

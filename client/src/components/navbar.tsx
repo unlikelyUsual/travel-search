@@ -35,7 +35,7 @@ const Navbar = () => {
                 <ul className='dropdown-menu'>
                   <li>
                     <a className='dropdown-item' href='/'>
-                      Action
+                      Dummy
                     </a>
                   </li>
                 </ul>

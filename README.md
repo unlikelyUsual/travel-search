@@ -1,3 +1,7 @@
 # travel-search
 
-Single page travel CRUD operation form with dashboard with client and server
+Single page travel : Add and view operation form with dashboard with client and server
+Technology user
+
+- Server : NodeJS, TS, ExpressJS, MongoDb
+- Client : ReactJs, ReduxToolKit
