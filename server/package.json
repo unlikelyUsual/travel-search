@@ -9,7 +9,7 @@
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\"",
     "server": "npm i && npx tsc && node dist/server.js",
     "client": "cd .. && cd client && npm install && npm run build",
-    "deploy" : "concurrently \"npm run server\" \"npm run client\""
+    "deploy" : "npm run client && npm run server"
   },
   "keywords": [],
   "author": "",
