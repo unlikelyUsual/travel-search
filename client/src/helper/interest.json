@@ -1,0 +1,22 @@
+[
+    {
+        "id": "adventure",
+        "value": "Adventure"
+    },
+    {
+        "id": "heritage",
+        "value": "Heritage"
+    },
+    {
+        "id": "safari",
+        "value": "Safari"
+    },
+    {
+        "id": "food",
+        "value": "Wine & Food"
+    },
+    {
+        "id": "beaches",
+        "value": "Beaches"
+    }
+]
