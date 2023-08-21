@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTrips } from "../reducers/tripReducer";
 import { useEffect } from "react";
 import { AppDispatch } from "../store";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   const dispatch = useDispatch<AppDispatch>();

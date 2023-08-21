@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 interface INavLink {
   link: string;
   menu: string;
@@ -44,9 +46,12 @@ const Navbar = () => {
           </ul>
         </div>
         <div className='d-flex' role='search'>
-          <a className='btn btn-primary px-3 py-1' type='submit' href='/dashboard'>
+          <Link className='btn btn-primary mx-3' to='/'>
+            Home
+          </Link>
+          <Link className='btn btn-primary px-3 py-1' type='submit' to='/dashboard'>
             Admin Dashboard
-          </a>
+          </Link>
         </div>
       </div>
     </nav>
