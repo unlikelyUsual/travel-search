@@ -1,7 +1,7 @@
 import Axios from "axios";
 
 const axios = Axios.create({
-  baseURL: "https://localhost:4000",
+  baseURL: "https://travel-search-9y9t.onrender.com",
   headers: {
     "Content-Type": "application/json",
   },
