@@ -18,13 +18,13 @@ render.com
 
 ### Setup on local machine
 
-Step 1 : Create mongo db atlas instance
-Step 2 : create .env file in server folder
-Step 3 : add DB_URL=<value>
-Step 4 : Start the server
-`npm run dev`
-Step 5 : Start the client
-`npm run start`
+1.  Create mongo db atlas instance
+2.  create .env file in server folder
+3.  add DB_URL=<value>
+4.  Start the server
+    `npm run dev`
+5.  Start the client
+    `npm run start`
 
 ### Possible improvements
 
