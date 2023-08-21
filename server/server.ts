@@ -7,7 +7,7 @@ import path from "path";
 
 dotenv.config({ debug: true });
 
-const port = process.env.SERVER_PORT;
+const port = 4000 || process.env.PORT;
 
 new Database();
 
